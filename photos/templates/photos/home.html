@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Photos {% endblock %}
+
+{% block section %}
+
+     <h1>Last 5 published photos</h1>
+
+    {% for photo in photo_list  %}
+
+        <a href="{% url 'photo_detail' photo.pk%}"/>
+        <img src="{{photo.url}}" alt="{{photo.name}}" height="150px">
+        <a/>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
