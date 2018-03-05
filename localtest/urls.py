@@ -18,6 +18,8 @@ from django.contrib import admin
 
 from users import views as users_views
 from photos import views as photos_views
+from photos.views import HomeView,DetailView,CreateView
+from users.views import LoginView,LogoutView
 
 
 
@@ -27,14 +29,14 @@ urlpatterns = [
 
     #Photos
     url(r'^admin/', admin.site.urls),
-    url(r'^$',photos_views.home,name='home'),
-    url(r'^photos/new',photos_views.create,name="create_photo"),
+    url(r'^$',HomeView.as_view(),name='home'),
+    url(r'^photos/new',CreateView.as_view(),name="create_photo"),
 
-    url(r'^photo/(?P<pk>[0-9]+)$',photos_views.detail,name='photo_detail'),
+    url(r'^photo/(?P<pk>[0-9]+)$',DetailView.as_view(),name='photo_detail'),
 
     # Users
-    url(r'^login$', users_views.login, name='user_login'),
-    url(r'^logout$', users_views.logout, name='user_logout')
+    url(r'^login$', LoginView.as_view(), name='user_login'),
+    url(r'^logout$', LogoutView.as_view(), name='user_logout')
 
 
 
