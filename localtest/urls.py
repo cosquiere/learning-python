@@ -28,12 +28,15 @@ urlpatterns = [
     #Photos
     url(r'^admin/', admin.site.urls),
     url(r'^$',photos_views.home,name='home'),
+    url(r'^photos/new',photos_views.create,name="create_photo"),
 
     url(r'^photo/(?P<pk>[0-9]+)$',photos_views.detail,name='photo_detail'),
 
     # Users
     url(r'^login$', users_views.login, name='user_login'),
     url(r'^logout$', users_views.logout, name='user_logout')
+
+
 
 
 ]

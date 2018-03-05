@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for localtest project.
 
@@ -121,3 +122,30 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+#LOGIN URL
+#When a user is not autenticated is redirect to this url
+LOGIN_URL = '/login'
+
+
+
+#LICENSES
+#By default it takes default licenses define on photos.settings
+LICENSES = (
+    ('QUE','Quentin'),
+    ('DSH','Dr. Schultz')
+)
+
+#BADWORDS http:// goo.gl/G2nCu7
+PROJECT_BADWORDS = [
+    u'Empanao',
+    u'Enderezaplátanos',
+    u'Esgarramantas',
+    u'Feodoble',
+    u'Follacabras',
+    u'Follácaros',
+    u'Gilipipas',
+    u'Huelebragas',
+    u'Lechuguino'
+                    ]

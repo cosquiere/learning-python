@@ -11,10 +11,13 @@
         </value>
       </option>
     </inspection_tool>
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredIdentifiers">
         <list>
           <option value="photos.views.pk" />
+          <option value="photos.views.django" />
+          <option value="photos.forms.BARDWORDS" />
         </list>
       </option>
     </inspection_tool>
