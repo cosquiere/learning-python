@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from photos.settings import LICENSES
+
 # Create your models here.
 
 
@@ -13,16 +15,7 @@ from django.db import models
 
 
 
-# LICENSES:
-COPYRIGHT = 'RIG'
-COPYLEFT = 'LEF'
-CREATIVE_COMMONS = 'CC'
 
-DEFAULT_LICENSES = (
-    (COPYRIGHT, 'Copyright'),
-    (COPYLEFT, 'Copyleft'),
-    (CREATIVE_COMMONS, 'Creative Commons')
-)
 
 # VISIBILITY:
 PUBLIC = 'PUB'
@@ -42,7 +35,7 @@ class Photo(models.Model):
     description = models.TextField(blank=True, null=True, default="")
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    license = models.CharField(max_length=3, choices=DEFAULT_LICENSES)
+    license = models.CharField(max_length=3, choices=LICENSES)
     visibility = models.CharField(max_length=3, choices=VISIBILITY, default=PUBLIC)
 
     def __unicode__(self):

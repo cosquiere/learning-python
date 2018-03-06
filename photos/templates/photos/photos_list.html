@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Photo list {% endblock %}
+
+{% block section %}
+        <h1>Photo list</h1>
+
+<!-- {% include 'photos/photos_loop.html' with photos_list=photos  %} change the context -->
+{% include 'photos/photos_loop.html' %}
+
+
+{% endblock %}
+
+
+
+

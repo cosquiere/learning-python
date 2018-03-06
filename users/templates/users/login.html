@@ -6,21 +6,25 @@
 
 {% block section %}
 
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ login_form.as_p }}
+                  {{ login_form.as_p }}
 
-    <div>
-        <button>Login</button>
-    </div>
-</form>
-
+        <div>
+            <button>Login</button>
+        </div>
+    </form>
+</div>
 {% for error in errors %}
 
     <p> {{error}}</p>
 
 {% endfor %}
+
+
+
 
 
 {% endblock %}

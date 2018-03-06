@@ -14,5 +14,5 @@ def badwords_detector(value):
             if badword.lower() in value.lower():
                 raise ValidationError(u'La palabra {0} no está permitida'.format(badword))
 
-        # Si todo va OK, devuelvo los datos limpios/normalizados
+        # Si to do va OK, devuelvo los datos limpios/normalizados
         return True
